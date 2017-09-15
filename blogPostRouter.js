@@ -18,6 +18,8 @@ BlogPosts.create(
   'Mario'
 )
 
+router.use(jsonParser)
+
 // respond with JSON of all blog posts
 router.get('/', (req, res) => {
   res.json(BlogPosts.get())
@@ -26,7 +28,7 @@ router.get('/', (req, res) => {
 // when new blog post added, ensure has required fields. if not,
 // log error and return 400 status code with helpful message.
 // if okay, add new post, and return it with a status 201.
-router.post('/', jsonParser, (req, res) => {
+router.post('/', (req, res) => {
   // ensure `title`, `content`, and `author` are in request body
   const requiredFields = ['title', 'content', 'author']
   for (let i = 0; i < requiredFields.length; i++) {
