@@ -1,0 +1,31 @@
+{
+  "name": "blog-api",
+  "version": "0.0.1",
+  "description": "Thinkful Blog API Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhnnyk/blog-API-challenge.git"
+  },
+  "keywords": [
+    "thinkful",
+    "node",
+    "express",
+    "javascript"
+  ],
+  "author": "John Knotts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhnnyk/blog-API-challenge/issues"
+  },
+  "homepage": "https://github.com/jhnnyk/blog-API-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "uuid": "^3.1.0"
+  }
+}
