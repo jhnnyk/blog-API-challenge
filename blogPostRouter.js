@@ -50,4 +50,34 @@ router.delete('/:id', (req, res) => {
   res.status(204).end()
 })
 
+// handle PUT request to update blog post
+router.put('/:id', (req, res) => {
+  // check for required fields
+  const requiredFields = ['title', 'content', 'author']
+  for (let i = 0; i < requiredFields.length; i++) {
+    const field = requiredFields[i]
+    if (!(field in req.body)) {
+      const message = `Missing \`${field}\` in request body`
+      console.error(message)
+      return res.status(400).send(message)
+    }
+  }
+  // check that IDs match
+  if (req.params.id !== req.body.id) {
+    const message = `Request path id (${req.params.id}) and 
+                request body id (${req.body.id}) must match`
+    console.error(message)
+    return res.status(400).send(message)
+  }
+  // update post
+  console.log(`Updating blog post item \`${req.params.id}\``)
+  const updatedPost = BlogPosts.update({
+    id: req.params.id,
+    title: req.body.title,
+    content: req.body.content,
+    author: req.body.author
+  })
+  res.status(204).end()
+})
+
 module.exports = router

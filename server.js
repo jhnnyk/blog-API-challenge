@@ -8,12 +8,6 @@ const blogPostRouter = require('./blogPostRouter')
 // log the http layer
 app.use(morgan('common'))
 
-// app.use(express.static('public'))
-//
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/views/index.html')
-// })
-
 app.use('/blog-post', blogPostRouter)
 
 app.listen(process.env.PORT || 8080, () => {
