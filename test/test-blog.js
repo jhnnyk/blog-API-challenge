@@ -71,4 +71,16 @@ describe('Blog', function () {
           })
       })
   })
+
+  it('should delete posts on DELETE', function () {
+    return chai.request(app)
+      .get('/blog-post')
+      .then(function (res) {
+        return chai.request(app)
+          .delete(`/blog-post/${res.body[0].id}`)
+      })
+      .then(function (res) {
+        res.should.have.status(204)
+      })
+  })
 })
