@@ -21,6 +21,15 @@ describe('Blog', function () {
       .get('/blog-post')
       .then(function (res) {
         res.should.have.status(200)
+        res.should.be.json
+        res.body.should.be.a('array')
+
+        res.body.length.should.be.at.least(1)
+
+        res.body.forEach(function (post) {
+          post.should.be.a('object')
+          post.should.include.keys(['id', 'title', 'content', 'author'])
+        })
       })
   })
 })
