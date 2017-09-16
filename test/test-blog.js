@@ -51,4 +51,24 @@ describe('Blog', function () {
         res.body.id.should.not.be.null
       })
   })
+
+  it('should update posts on PUT', function () {
+    const updateData = {
+      title: 'Updated!',
+      content: 'Bananas!! All of the bananas!!',
+      author: 'Johnny Tester'
+    }
+
+    return chai.request(app)
+      .get('/blog-post')
+      .then(function (res) {
+        updateData.id = res.body[0].id
+        return chai.request(app)
+          .put(`/blog-post/${updateData.id}`)
+          .send(updateData)
+          .then(function (res) {
+            res.should.have.status(204)
+          })
+      })
+  })
 })
