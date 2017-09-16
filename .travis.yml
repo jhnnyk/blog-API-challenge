@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: egz+PA0eEoqGqayE5JIgT1wDh1ZgdEJfBUKX3xi28+27nGoeElfYqQrOEfs3eP1q/fxzYqJxep996N/RGvNRCYEUki8EIRibJFMF3wRQWuILZuuv1SZ9Psz1W3BDLWGynZbTLWcgT03s0WevXdtISh8BhblHtzVDsgfdEv/nSgSPbl9+U/gq+wzDHga0PPMBzjLOpxki1/CQ6zT96mQI/E47TuIQLE+ehChycrzvWEDG0HiCOFrM7byTrk6CszUt2McgAOaH8tpkY8z9xbArNl9IzqUl79RT5okPKFHVIxXDgD4LIIrGryRQlTXTy49h17/F5NR1Y9diyGfAwu2G4mg68gh+Y8BdtRdKZzuEWczW76NgjdgWrAmWgwlks/i/oWDuqmhJXIsaJsBwx3RsoaBJ3h0WDpCul33s3WSuo/PW/GOdVJoSM5tA24LkBxBaWUAsmxCsiPNudKT5YApIBKsISg+1kEn+TeI9JrqwvkaS08t1xZrHs7G+FN9V1o2+Di3xPYNYahG6Fjpu6MO4JlMHSZ+eij7KpVGwxTvzbswAwvOQXAEAEuOp6Xzt94eONicv/fiA/fJ25wxkpEH9c02Vb1jm17oYahUkxzoT3VC9uIFNT3NtbeKo3ZPYAx1HrlTtxXro2sTyChK4MeLMqqsLpr3/QdMl6QGTARLybZk=
+  app: safe-journey-98706
+  on:
+    repo: jhnnyk/blog-API-challenge
